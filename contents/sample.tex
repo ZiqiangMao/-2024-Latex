@@ -1,0 +1,85 @@
+\appchapter{对\LaTeX 不熟悉可以参考这里}\label{chap:sample}
+\textbf{\color{blue}编号条目使用asparaenum编写较为紧凑美观：}
+\begin{asparaenum}[1)]
+	\item 固体氧化物燃料电池功重比低。
+	\item 无涡轮燃烧室流场组织复杂、易出现燃烧不均匀。
+\end{asparaenum}
+
+\textbf{\color{blue}公式编写示例如下。}SOFC电池反应\cite{Fu2021}：
+\begin{center}
+	阳极：\ce{H_2 + O^2- -> H_2O + 2e^-}；阴极：\ce{1/2O_2 + 2e^- -> O^2-}
+\end{center}
+
+电池中的电化学反应产生电能，电池电流即为电子传输速率，电流大小反映了电化学反应的剧烈程度，如式\eqref{icell}所示：
+\begin{equation}
+	i=\frac{dQ}{dt}=nF\frac{dN}{dt}=jA
+	\label{icell}
+\end{equation}
+
+其中，$Q$为总电荷量，$n$为电子迁移量，$N$为物质的量，$j$为电流密度，$A$为反应面积。
+
+多孔介质中气体流动并不缓慢因此不能直接使用Darcy扩散方程而要使用Brinkman方程\eqref{momentumGDE}\cite{Chellehbari2021,Celik2018}。
+\begin{align}
+	\nabla\left(\rho\textbf{u}\right)&=0\label{mass}\\
+	\rho(\textbf{u}\nabla)\textbf{u}&=
+	-\nabla p
+	+\nabla\left[\mu\left(\nabla \textbf{u}+(\nabla \textbf{u})^{T}\right)-\frac{2\mu}{3}\left(\nabla{\textbf{u}}\right)\right]
+	+\textbf{F}\label{momentum}\\
+	\nabla(\rho{\textbf{u}})&=Q_{br}\label{massGDE}\\
+	\frac{\rho}{\varepsilon^2}\left(\left(\textbf{u} \nabla\right)\textbf{u}\right)&={F}-\nabla{p}+
+	\nabla\left[\frac{\mu}{\varepsilon}\left(\nabla{\textbf{u}}
+	+\left(\nabla{\textbf{u}}\right)^{T}\right)
+	-\frac{2\mu}{3\varepsilon}\left(\nabla{\textbf{u}}\right)\right]
+	-\left(\frac{\mu}{\kappa}+
+	\frac{Q_{br}}{\varepsilon^{2}}\right)\textbf{u}\label{momentumGDE}
+\end{align}
+
+\textbf{\color{blue} 各种图片的插入和引用格式，如图\ref{energypd}、图\ref{Yang2022}、图\ref{resultCCcloud}所示。目前使用[H]需要自行调节每个图片/表格的位置和大小以达到最佳的排版效果（也可以结合vspace\{\}或hspace\{\}指令调整间距），否则如果某页图片放不下则会跳转到下一页，原先位置出现大段留白。但是用htbp会导致图片固定在下一页页首（或b、p位置），后续段落被打断，部分文字前提填补上一页空白，剩下的部分在图片后。最好的方式是如果图片放不下就放在下一段结尾处（而不是页首）。目前还没有研究出自动化解决方案，如果有麻烦告诉我，wx：hello\_rua}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{energypd.jpg}
+	\caption{国际能源署2050净零方案关键里程碑图\cite{Chappell2021}}\label{energypd}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subcaptionbox{同向流和逆向流}[14cm]{
+		\includegraphics[width=0.75\textwidth]{direction1.png}
+	}
+	\subcaptionbox{交叉流}[14cm]{
+		\includegraphics[width=0.75\textwidth]{direction2.png}
+	}
+	\caption{不同的流动方向及其电流密度分布图\cite{Yang2022}}\label{Yang2022}
+\end{figure}
+\begin{figure}[H]
+	\centering
+	\subcaptionbox{COMSOL出口速度云图}[6cm]{
+		\includegraphics[height=3.5cm]{outCOMSOL.png}
+	}
+	\subcaptionbox{COMSOL横向速度云图}[6cm]{
+		\includegraphics[height=3.5cm]{hCOMSOL.png}
+	}
+	\subcaptionbox{CFX出口速度云图}[6cm]{
+		\includegraphics[height=3.5cm]{outCFX.png}
+	}
+	\subcaptionbox{CFX横向速度云图}[6cm]{
+		\includegraphics[height=3.5cm]{hCFX.png}
+	}
+	\caption{计算结果对比图}\label{resultCCcloud}
+\end{figure}
+\textbf{\color{blue}表格格式如表\ref{Sasi2024}所示。}
+\begin{table}[H]
+	\centering
+	\caption{氨氢物化性质表\cite{Sasi2024}}\label{Sasi2024}
+	\begin{tabular}{ccc}
+		\toprule%第一道横线
+		&氨&氢\\
+		\midrule%第二道横线
+		密度（kg/m$^3$）&684&71.4\\
+		沸点（K）&239.1&21\\
+		分子质量（g/mol）&17&2\\
+		低位热值（MJ/kg）&18.61&120\\
+		比热容（kJ/kg$\cdot$K）&4.6&8.68\\
+		燃点（K）&630&560\\
+		\bottomrule%第三道横线
+	\end{tabular}
+\end{table}
