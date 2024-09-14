@@ -1,7 +1,7 @@
 # 上海交通大学2024本科毕业论文LaTeX模板（个人修订版）
 
 该模板参考教务处给出的[2024届本科生毕业设计（论文）](https://www.jwc.sjtu.edu.cn/info/1041/111791.htm "https://www.jwc.sjtu.edu.cn/info/1041/111791.htm")附件中的Latex模板修订而成。
-该教务处模板似乎参考了[https://github.com/sjtug/SJTUThesis](https://github.com/sjtug/SJTUThesis)
+该教务处模板似乎参考了早期版本的[https://github.com/sjtug/SJTUThesis](https://github.com/sjtug/SJTUThesis)
 
 **如果你是LaTeX高手，建议下载原版教务处模板并自行修订和使用。**
 
